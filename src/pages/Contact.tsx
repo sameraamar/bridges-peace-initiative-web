@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, MessageCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const { t, language } = useLanguage();
@@ -16,13 +16,13 @@ const Contact: React.FC = () => {
     {
       icon: Phone,
       title: t('phone'),
-      value: '0097-2-6408161 / 00972-2-6408686',
+      value: '+972-(0)2-6408161 / +972-(0)2-6408686',
       href: 'tel:+972-2-6408161'
     },
     {
       icon: Phone,
       title: language === 'ar' ? 'فاكس' : language === 'he' ? 'פקס' : 'Fax',
-      value: '00972-2-6408203',
+      value: '+972-(0)2-6408203',
       href: 'tel:+972-2-6408203'
     }
   ];
@@ -123,20 +123,33 @@ const Contact: React.FC = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex items-center p-4 bg-green-50 rounded-lg">
-                <div>
-                  <h3 className="font-semibold text-gray-900 text-lg mb-2">
-                    {language === 'ar' ? 'عبد الكريم عزام' :
-                     language === 'he' ? 'עבדאלכרים עזאם' :
-                     'Abdolkarim Azzam'}
-                  </h3>
+              <div className="p-4 bg-green-50 rounded-lg">
+                <h3 className="font-semibold text-gray-900 text-lg mb-3">
+                  {language === 'ar' ? 'عبد الكريم عزام' :
+                   language === 'he' ? 'עבדאלכרים עזאם' :
+                   'Abdolkarim Azzam'}
+                </h3>
+                <div className="space-y-2" >
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-green-600 mr-2" />
                     <a 
-                      href="tel:0505333867"
+                      href="tel:+972505333867"
                       className="text-green-600 hover:text-green-700 transition-colors"
                     >
-                      0505333867
+                      +972-(0)50-5333867
+                    </a>
+                  </div>
+                  <div className="flex items-center">
+                    <MessageCircle className="h-5 w-5 text-green-600 mr-2" />
+                    <a 
+                      href="https://wa.me/972505333867"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-600 hover:text-green-700 transition-colors"
+                    >
+                      {language === 'ar' ? 'واتساب' :
+                       language === 'he' ? 'WhatsApp' :
+                       'WhatsApp'}
                     </a>
                   </div>
                 </div>

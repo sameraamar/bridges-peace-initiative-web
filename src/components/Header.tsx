@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header: React.FC = () => {
@@ -29,10 +29,10 @@ const Header: React.FC = () => {
           <div className={`flex items-center ${isRTL ? 'ml-4' : 'mr-4'}`}>
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">ج</span>
+                <Home className="h-4 w-4 text-white" />
               </div>
               <span className={`font-semibold text-gray-900 text-sm ${isRTL ? 'mr-2' : 'ml-2'}`}>
-                {t('siteTitle')}
+               
               </span>
             </Link>
           </div>
