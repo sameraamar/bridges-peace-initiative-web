@@ -11,25 +11,25 @@ const Home: React.FC = () => {
 
   const videos = [
     { 
-      src: '/Video 1.mp4', 
+      src: '/video1.mp4', 
       title: language === 'ar' ? 'النائب منصور عباس يسلّم رئيس الحكومة وثيقة المبادرة' :
              language === 'he' ? 'ח״כ מנסור עבאס העביר לרה"מ נתניהו את מסמך היוזמה' :
              'MK Mansour Abbas presents the initiative document to the Prime Minister'
     },
     { 
-      src: '/Video 2.mp4', 
+      src: '/video2.mp4', 
       title: language === 'ar' ? 'مقابلة مع راديو الشمس حول المبادرة' :
              language === 'he' ? 'ריאיון עם רדיו אל-שמס על היוזמה' :
              'Interview with Radio Al-Shams about the initiative'
     },
     { 
-      src: '/Video 3.mp4', 
+      src: '/video3.mp4', 
       title: language === 'ar' ? 'مقابلة مع راديو مكان حول أهداف المبادرة' :
              language === 'he' ? 'ריאיון עם רדיו מכאן על מטרות היוזמה' :
              'Interview with Radio Makan about the initiative goals'
     },
     { 
-      src: '/Video 4.mp4', 
+      src: '/video4.mp4', 
       title: language === 'ar' ? 'مقابلة مع راديو الناس حول الدولة الفلسطينية' :
              language === 'he' ? 'ריאיון עם רדיו אל-נאס על המדינה הפלסטינית' :
              'Interview with Radio Al-Nas about the Palestinian state'

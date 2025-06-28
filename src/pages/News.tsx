@@ -21,7 +21,7 @@ const News: React.FC = () => {
         language === 'he' ?
         'ח"כ מנסור עבאס מציג "יוזמת גשרים של פיוס ושלום" בפני ישראל והפלסטינים ומדינות ערב. ח"כ עבאס שלח את יוזמתו גם לפסגה הערבית הדחופה בקהיר. מטרת היוזמה להביא להפסקת המלחמה והחזרת כל החטופים, ולפתיחת אופק להסדר מדיני של שלום בין ישראלים לפלסטינים.' :
         'MK Mansour Abbas Presents the "Bridges of Reconciliation and Peace Initiative" to Israel, the Palestinians, and Arab States. MK Abbas has also submitted the initiative to the emergency Arab League summit in Cairo. Its goal is to end the war, secure the release of all hostages, and open a path toward a political peace settlement between Israelis and Palestinians.',
-      video: '/Video 1.mp4',
+      video: '/video1.mp4',
       videoTitle: language === 'ar' ? 'النائب منصور عباس يسلّم يوم الإثنين 3/3/2025 رئيس الحكومة الإسرائيلية بنيامين نتنياهو وثيقة "مبادرة جسور التصالح والسلام" ويعرض في خطابه في الكنيست أبرز محاورها أمام الوزراء وأعضاء الكنيست' :
                    language === 'he' ? 'ח״כ מנסור עבאס העביר יום שני 3/3/2025 במליאת הכנסת לרה"מ נתניהו את מסמך היוזמה שלו "גשרים של פיוס ושלום" והציג את מטרותיה בפני השרים וחברי הכנסת במליאה.' :
                    'On Monday, March 3, 2025, MK Mansour Abbas presented his "Bridges of Reconciliation and Peace Initiative" to Prime Minister Benjamin Netanyahu during a Knesset plenary session. He outlined the goals of the initiative to ministers and fellow members of the Knesset.'
@@ -39,7 +39,7 @@ const News: React.FC = () => {
         language === 'he' ?
         'רע"מ מציגה בפני המפלגות וראשי הרשויות הערביות את יוזמת גשרים לפיוס ושלום. המפלגה הערבית המאוחדת (רע"מ) שלחה מסר למפלגות הערביות ולראשי הרשויות המקומיות הערביות, שבו הציגה הצעה מעשית הכוללת חזון פוליטי כולל להתמודדות עם הסכנות והאתגרים העומדים בפני החברה הערבית והעם הפלסטיני.' :
         'Ra\'am Presents the Bridges of Reconciliation and Peace Initiative to Arab Parties and Local Arab Leadership in Israel. The United Arab List (Ra\'am) addressed a formal message to Arab political parties and heads of Arab local authorities in Israel. The message included a practical proposal and a comprehensive political vision for addressing the escalating threats and challenges facing Arab society in Israel and the Palestinian people.',
-      video: '/Video 5.mp4',
+      video: '/video5.mp4',
       videoTitle: language === 'ar' ? 'منصور عباس في مؤتمر يديعوت أحرونوت يدعو لوقف الحرب ويطرح مبادرة جسور كخطة واقعية للحل السياسي' :
                    language === 'he' ? 'ח"כ מנסור עבאס בכנס "ידיעות אחרונות" קורא להפסיק את המלחמה, ומציג את יוזמתו "גשרים לפיוס ושלום" כפתרון מדיני ריאלי' :
                    'At the "People of the Nation" conference organized by Yedioth Ahronoth and Ynet on April 7, 2025, MK Mansour Abbas called for an immediate end to the war in Gaza and introduced his "Bridges of Reconciliation and Peace Initiative" as a realistic political solution.'
@@ -53,7 +53,7 @@ const News: React.FC = () => {
              language === 'he' ? 'ריאיון עם רדיו אל-שמס' :
              'Interview with Radio Al-Shams',
       date: '2025-03-04',
-      video: '/Video 2.mp4',
+      video: '/video2.mp4',
       description: language === 'ar' ? 'النائب منصور عباس لراديو الشمس (4/3/2025): عرضت مبادرة جسور على عدة شخصيات فلسطينية وإسرائيلية وعالمية وجوابهم كان أنها: واقعية، منطقية وعملية' :
                    language === 'he' ? 'ח"כ מנסור עבאס לרדיו אל-שמס (4/3/2025): הצגתי את יוזמת "גשרים לפיוס ושלום" למספר דמויות פלסטיניות, ישראליות ובינלאומיות – ותגובתם הייתה שהיא ריאלית, הגיונית וישימה.' :
                    'In an interview with Radio Al-Shams (March 4, 2025), MK Abbas said: "I presented the Bridges of Reconciliation and Peace Initiative to several Palestinian, Israeli, and international figures. Their response was that the plan is realistic, logical, and practical."'
@@ -64,7 +64,7 @@ const News: React.FC = () => {
              language === 'he' ? 'ריאיון עם רדיו מכאן' :
              'Interview with Radio Makan',
       date: '2025-03-04',
-      video: '/Video 3.mp4',
+      video: '/video3.mp4',
       description: language === 'ar' ? 'النائب منصور عباس يتحدث لراديو مكان (4/3/2025) عن أهداف ومحاور مبادرة جسور التصالح والسلام التي أطلقها: النكبة التي نعيشها دفعتني للمبادرة' :
                    language === 'he' ? 'ח"כ מנסור עבאס מדבר לרדיו מכאן (4/3/2025) על חזון ומטרותיה של יוזמת "גשרים לפיוס ושלום" שיזם: המצב הקשה שאנו חיים בו היום (המלחמה) דחף אותי ליוזמה.' :
                    'Speaking to Radio Makan (March 4, 2025), MK Abbas explained the vision and goals behind the Bridges of Reconciliation and Peace Initiative: "The harsh reality we are living in — the war — is what pushed me to launch this initiative."'
@@ -75,7 +75,7 @@ const News: React.FC = () => {
              language === 'he' ? 'ריאיון עם רדיו אל-נאס' :
              'Interview with Radio Al-Nas',
       date: '2025-03-04',
-      video: '/Video 4.mp4',
+      video: '/video4.mp4',
       description: language === 'ar' ? 'النائب منصور عباس لراديو الناس (4/3/2025): مبادرة جسور التصالح والسلام التي قدّمتها تؤكّد: الدولة الفلسطينية أولًا وقيامها هو الضامن للسلام في المنطقة' :
                    language === 'he' ? 'ח"כ מנסור עבאס לרדיו אל-נאס (4/3/2025): יוזמת "גשרים לפיוס ושלום" שהצגתי מדגישה: המדינה הפלסטינית תחילה, והקמתה היא הערובה לשלום באזור.' :
                    'In an interview with Radio Al-Nas (March 4, 2025), MK Abbas emphasized: "Bridges of Reconciliation and Peace Initiative clearly states: A Palestinian state must come first. Its establishment is the key to peace in the region."'
