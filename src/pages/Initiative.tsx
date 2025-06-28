@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -9,11 +8,13 @@ const Initiative: React.FC = () => {
   const { t, language } = useLanguage();
 
   const handleDownloadPDF = () => {
-    // This would be replaced with actual PDF download functionality
-    console.log('Downloading PDF...');
-    alert(language === 'ar' ? 'سيتم تحميل الملف قريباً' :
-          language === 'he' ? 'הקובץ יורד בקרוב' :
-          'File will be downloaded soon');
+    // Create a link element and trigger download
+    const link = document.createElement('a');
+    link.href = '/initiative-full-text.pdf';
+    link.download = 'initiative-full-text.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const initiativePoints = language === 'ar' ? [
