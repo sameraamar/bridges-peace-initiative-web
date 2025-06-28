@@ -17,31 +17,35 @@ const Initiative: React.FC = () => {
     document.body.removeChild(link);
   };
 
-const initiativePoints = language === 'ar' ? [
-  "إن رؤيتنا في مبادرة جسور التصالح والسّلام هي الوصول إلى سلام شامل ومستدام إنهاء الصراع في الأرض المقدّسة للديانات الثلاث اليهودية المسيحية، والإسلام تحقيق المصالحة بين اليهود والعرب، إقامة الدولة الفلسطينية لجانب دولة إسرائيل، وتحقيق السلام بين الدولتين، وفق رؤية حل الدولتين وفي إطار الشرعية الدولية.",
-  "نقترح القبول الفوري المتبادل بمبدأ حل وإقامة الدولتين إسرائيل وفلسطين جنبا إلى جنب، في سلام وأمن وشراكة وتسامح.",
-  "عقد مؤتمر سلام دولي عاجل: المؤتمر سيجمع كافة الأطراف والداعمين ذوي الصلة بالتسوية السياسية الشاملة، هدف المؤتمر إطلاق مسار جديد لتسوية سياسية شاملة، والدعوة لوقف الحرب وكل أشكال العنف المتبادل، واستكمال وتطوير تفاصيل مبادرة جسور التصالح والسلام.",
-  "الإعلان المتبادل عن هدنة دائمة وشاملة حتّى تحقيق اتفاق التسوية الدائم والنهائي: يتضمن الإعلان عن الهدنة موافقة الطرفين الإسرائيلي والفلسطيني على وقف شامل وكامل ودائم لإطلاق النار والحرب، بما يشمل وقف جميع الأعمال العدائية والعنف القومي المتبادل، والتحريض على العنف بشكل مطلق وثابت."
-] : language === 'he' ? [
-  "החזון שעומד בבסיס יוזמת גשרים של פיוס ושלום הינו שלום כולל ובר קיימא, סיום הסכסוך בארץ הקדושה לשלוש הדתות -היהדות הנצרות והאסלאם- ופיוס בין היהודים והערבים.",
-  "אנו מציעים קבלה והסכמה הדדית מידית לפתרון והקמת שתי מדינות -ישראל ופלסטין- זו לצד זו, בשלום, בביטחון, בשותפות ובסובלנות.",
-  "ועידת שלום בינלאומית דחופה: הכינוס יכלול את כל הצדדים והתומכים הרלוונטיים להסדר מדיני כולל, מטרת הכינוס היא להשיק מסלול חדש להסדר מדיני כולל, וקריאה להפסקת המלחמה וכל צורות האלימות ההדדית, והשלמה ופיתוח פרטי יוזמת גשרי פיוס ושלום.",
-  "הכרזה הדדית על הפסקת אש קבועה וכוללת עד להשגת הסכם הסדר קבע וסופי: ההכרזה על הפסקת האש כוללת את הסכמת שני הצדדים, הישראלי והפלסטיני, להפסקת אש ומלחמה מקיפה, מלאה וקבועה, לרבות הפסקת כל פעולות האיבה והאלימות הלאומית ההדדית, והסתה לאלימות באופן מוחלט וקבוע."
-] : [
-  "The vision of the Bridges of Reconciliation and Peace Initiative is to achieve a comprehensive and sustainable peace, ending the conflict in the Holy Land for the three religions—Judaism, Christianity, and Islam—and achieving reconciliation between Jews and Arabs, establishing a Palestinian state alongside the State of Israel, and achieving peace between the two states, in accordance with the two-state solution vision and within the framework of international legitimacy.",
-  "We propose immediate mutual acceptance of the principle of the two-state solution and the establishment of two states, Israel and Palestine, side by side, in peace, security, partnership, and tolerance.",
-  "Convening an Urgent International Peace Conference: The conference will bring together all relevant parties and supporters of a comprehensive political settlement, with the goal of launching a new path for a comprehensive political settlement, calling for a cessation of war and all forms of mutual violence, and completing and developing the details of the Bridges of Reconciliation and Peace Initiative.",
-  "Bilateral Declaration of a Permanent and Comprehensive Ceasefire Until Final Settlement Agreement is Reached: The Ceasefire Declaration encompasses an agreement between the Israeli and Palestinian parties for a comprehensive, complete, and permanent cessation of hostilities and war, including an absolute and steadfast halt to all acts of hostility, mutual national violence, and incitement to violence."
-];
+  const initiativePoints = language === 'ar' ? [
+    "إن رؤيتنا في مبادرة جسور التصالح والسّلام هي الوصول إلى سلام شامل ومستدام إنهاء الصراع في الأرض المقدّسة للديانات الثلاث اليهودية المسيحية، والإسلام تحقيق المصالحة بين اليهود والعرب، إقامة الدولة الفلسطينية لجانب دولة إسرائيل، وتحقيق السلام بين الدولتين، وفق رؤية حل الدولتين وفي إطار الشرعية الدولية.",
+    "نقترح القبول الفوري المتبادل بمبدأ حل وإقامة الدولتين إسرائيل وفلسطين جنبا إلى جنب، في سلام وأمن وشراكة وتسامح.",
+    "عقد مؤتمر سلام دولي عاجل: المؤتمر سيجمع كافة الأطراف والداعمين ذوي الصلة بالتسوية السياسية الشاملة، هدف المؤتمر إطلاق مسار جديد لتسوية سياسية شاملة، والدعوة لوقف الحرب وكل أشكال العنف المتبادل، واستكمال وتطوير تفاصيل مبادرة جسور التصالح والسلام.",
+    "الإعلان المتبادل عن هدنة دائمة وشاملة حتّى تحقيق اتفاق التسوية الدائم والنهائي: يتضمن الإعلان عن الهدنة موافقة الطرفين الإسرائيلي والفلسطيني على وقف شامل وكامل ودائم لإطلاق النار والحرب، بما يشمل وقف جميع الأعمال العدائية والعنف القومي المتبادل، والتحريض على العنف بشكل مطلق وثابت."
+  ] : language === 'he' ? [
+    "החזון שעומד בבסיס יוזמת גשרים של פיוס ושלום הינו שלום כולל ובר קיימא, סיום הסכסוך בארץ הקדושה לשלוש הדתות -היהדות הנצרות והאסלאם- ופיוס בין היהודים והערבים.",
+    "אנו מציעים קבלה והסכמה הדדית מידית לפתרון והקמת שתי מדינות -ישראל ופלסטין- זו לצד זו, בשלום, בביטחון, בשותפות ובסובלנות.",
+    "ועידת שלום בינלאומית דחופה: הכינוס יכלול את כל הצדדים והתומכים הרלוונטיים להסדר מדיני כולל, מטרת הכינוס היא להשיק מסלול חדש להסדר מדיני כולל, וקריאה להפסקת המלחמה וכל צורות האלימות ההדדית, והשלמה ופיתוח פרטי יוזמת גשרי פיוס ושלום.",
+    "הכרזה הדדית על הפסקת אש קבועה וכוללת עד להשגת הסכם הסדר קבע וסופי: ההכרזה על הפסקת האש כוללת את הסכמת שני הצדדים, הישראלי והפלסטיני, להפסקת אש ומלחמה מקיפה, מלאה וקבועה, לרבות הפסקת כל פעולות האיבה והאלימות הלאומית ההדדית, והסתה לאלימות באופן מוחלט וקבוע."
+  ] : [
+    "The vision of the Bridges of Reconciliation and Peace Initiative is to achieve a comprehensive and sustainable peace, ending the conflict in the Holy Land for the three religions—Judaism, Christianity, and Islam—and achieving reconciliation between Jews and Arabs, establishing a Palestinian state alongside the State of Israel, and achieving peace between the two states, in accordance with the two-state solution vision and within the framework of international legitimacy.",
+    "We propose immediate mutual acceptance of the principle of the two-state solution and the establishment of two states, Israel and Palestine, side by side, in peace, security, partnership, and tolerance.",
+    "Convening an Urgent International Peace Conference: The conference will bring together all relevant parties and supporters of a comprehensive political settlement, with the goal of launching a new path for a comprehensive political settlement, calling for a cessation of war and all forms of mutual violence, and completing and developing the details of the Bridges of Reconciliation and Peace Initiative.",
+    "Bilateral Declaration of a Permanent and Comprehensive Ceasefire Until Final Settlement Agreement is Reached: The Ceasefire Declaration encompasses an agreement between the Israeli and Palestinian parties for a comprehensive, complete, and permanent cessation of hostilities and war, including an absolute and steadfast halt to all acts of hostility, mutual national violence, and incitement to violence."
+  ];
 
   return (
     <div className="min-h-screen bg-white py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{t('initiativeText')}</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            {language === 'ar' ? 'المبادرة' :
+             language === 'he' ? 'היוזמה' :
+             'The Initiative'}
+          </h1>
           <p className="text-xl text-gray-600">
             {language === 'ar' ? 'الخطوط العريضة لمبادرة جسور التصالح والسلام' :
-             language === 'he' ? 'הקווים המנחים של יוזמת גשרים של פיוס ושלום' :
+             language === 'he' ? 'הקווים המנחים של יוזמת גشרים של פיוס ושלום' :
              'Guidelines for the Bridges of Reconciliation and Peace Initiative'}
           </p>
         </div>
@@ -68,8 +72,15 @@ const initiativePoints = language === 'ar' ? [
               size="lg"
             >
               <Download className="mr-2 h-5 w-5" />
-              {t('downloadPdf')}
+              {language === 'ar' ? 'تحميل ملف PDF' :
+               language === 'he' ? 'הורד קובץ PDF' :
+               'Download PDF'}
             </Button>
+            <p className="text-sm text-gray-600 mt-4">
+              {language === 'ar' ? 'اضغط هنا لتحميل النص الكامل للمبادرة بجميع اللغات' :
+               language === 'he' ? 'לחץ כאן להורדת הטקסט המלא של היוזמה בכל השפות' :
+               'Click here to download the full text of the initiative in all languages'}
+            </p>
           </CardContent>
         </Card>
 
@@ -81,6 +92,11 @@ const initiativePoints = language === 'ar' ? [
                language === 'he' ? 'עיקרי היוזמה' :
                'Key Points of the Initiative'}
             </CardTitle>
+            <CardDescription>
+              {language === 'ar' ? 'المحاور الأساسية التي تقوم عليها مبادرة جسور التصالح والسلام' :
+               language === 'he' ? 'העקרונות הבסיסיים של יוזמת גשרים של פיוס ושלום' :
+               'The fundamental principles of the Bridges of Reconciliation and Peace Initiative'}
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -99,21 +115,40 @@ const initiativePoints = language === 'ar' ? [
           </CardContent>
         </Card>
 
-        {/* Call to Action */}
-        <div className="text-center mt-12 p-8 bg-green-50 rounded-lg border border-green-100">
-          <h3 className="text-xl font-semibold text-green-900 mb-4">
-            {language === 'ar' ? 'انضم إلى مبادرتنا' :
-             language === 'he' ? 'הצטרף ליוזמה שלנו' :
-             'Join Our Initiative'}
-          </h3>
-          <p className="text-gray-700 mb-6">
-            {language === 'ar' ? 'كن جزءاً من بناء جسور التفاهم والسلام في مجتمعنا' :
-             language === 'he' ? 'היה חלק מבניית גשרי הבנה ושלום בחברה שלנו' :
-             'Be part of building bridges of understanding and peace in our society'}
-          </p>
-          <Button asChild className="bg-green-600 hover:bg-green-700">
-            <a href="/contact">{t('contactUs')}</a>
-          </Button>
+        {/* Additional Information */}
+        <div className="mt-8">
+          <Card className="border-green-100 bg-green-50">
+            <CardContent className="p-8 text-center">
+              <h3 className="text-xl font-semibold text-green-900 mb-4">
+                {language === 'ar' ? 'للمزيد من المعلومات' :
+                 language === 'he' ? 'למידע נוסף' :
+                 'For More Information'}
+              </h3>
+              <p className="text-gray-700 mb-6">
+                {language === 'ar' ? 'تحتوي الوثيقة الكاملة على تفاصيل شاملة حول المبادرة، بما في ذلك الخطة التنفيذية والآليات المقترحة لتحقيق السلام والمصالحة.' :
+                 language === 'he' ? 'המסמך המלא מכיל פרטים מקיפים על היוזמה, כולל התוכנית הביצועית והמנגנונים המוצעים להשגת שלום ופיוס.' :
+                 'The complete document contains comprehensive details about the initiative, including the implementation plan and proposed mechanisms for achieving peace and reconciliation.'}
+              </p>
+              <div className="flex justify-center gap-4">
+                <Button 
+                  onClick={handleDownloadPDF}
+                  className="bg-green-600 hover:bg-green-700"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  {language === 'ar' ? 'تحميل المبادرة' :
+                   language === 'he' ? 'הורד את היוזמה' :
+                   'Download Initiative'}
+                </Button>
+                <Button variant="outline" asChild className="border-green-600 text-green-600 hover:bg-green-50">
+                  <a href="/contact">
+                    {language === 'ar' ? 'تواصل معنا' :
+                     language === 'he' ? 'צור קשר' :
+                     'Contact Us'}
+                  </a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

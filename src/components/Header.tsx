@@ -38,8 +38,8 @@ const Header: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
+          <nav className={`hidden md:flex ${isRTL ? 'space-x-reverse space-x-8' : 'space-x-8'}`}>
+            {(language === 'ar' ? [...navigation].reverse() : navigation).map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
