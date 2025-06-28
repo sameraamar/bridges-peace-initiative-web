@@ -17,28 +17,22 @@ const Initiative: React.FC = () => {
     document.body.removeChild(link);
   };
 
-  const initiativePoints = language === 'ar' ? [
-    'تعزيز الحوار البناء بين جميع أطراف المجتمع',
-    'بناء الثقة من خلال المشاريع المشتركة',
-    'تطوير آليات حل النزاعات السلمية',
-    'تعزيز التعليم والثقافة كجسور للتفاهم',
-    'العمل على تحقيق العدالة الاجتماعية',
-    'تشجيع المشاركة المدنية الفعالة'
-  ] : language === 'he' ? [
-    'חיזוק הדיאלוג הבונה בין כל גורמי החברה',
-    'בניית אמון באמצעות פרויקטים משותפים',
-    'פיתוח מנגנונים לפתרון סכסוכים בשלום',
-    'חיזוק החינוך והתרבות כגשרים להבנה',
-    'פעולה להשגת צדק חברתי',
-    'עידוד השתתפות אזרחית פעילה'
-  ] : [
-    'Strengthening constructive dialogue between all parties in society',
-    'Building trust through joint projects',
-    'Developing mechanisms for peaceful conflict resolution',
-    'Promoting education and culture as bridges of understanding',
-    'Working to achieve social justice',
-    'Encouraging active civic participation'
-  ];
+const initiativePoints = language === 'ar' ? [
+  "إن رؤيتنا في مبادرة جسور التصالح والسّلام هي الوصول إلى سلام شامل ومستدام إنهاء الصراع في الأرض المقدّسة للديانات الثلاث اليهودية المسيحية، والإسلام تحقيق المصالحة بين اليهود والعرب، إقامة الدولة الفلسطينية لجانب دولة إسرائيل، وتحقيق السلام بين الدولتين، وفق رؤية حل الدولتين وفي إطار الشرعية الدولية.",
+  "نقترح القبول الفوري المتبادل بمبدأ حل وإقامة الدولتين إسرائيل وفلسطين جنبا إلى جنب، في سلام وأمن وشراكة وتسامح.",
+  "عقد مؤتمر سلام دولي عاجل: المؤتمر سيجمع كافة الأطراف والداعمين ذوي الصلة بالتسوية السياسية الشاملة، هدف المؤتمر إطلاق مسار جديد لتسوية سياسية شاملة، والدعوة لوقف الحرب وكل أشكال العنف المتبادل، واستكمال وتطوير تفاصيل مبادرة جسور التصالح والسلام.",
+  "الإعلان المتبادل عن هدنة دائمة وشاملة حتّى تحقيق اتفاق التسوية الدائم والنهائي: يتضمن الإعلان عن الهدنة موافقة الطرفين الإسرائيلي والفلسطيني على وقف شامل وكامل ودائم لإطلاق النار والحرب، بما يشمل وقف جميع الأعمال العدائية والعنف القومي المتبادل، والتحريض على العنف بشكل مطلق وثابت."
+] : language === 'he' ? [
+  "החזון שעומד בבסיס יוזמת גשרים של פיוס ושלום הינו שלום כולל ובר קיימא, סיום הסכסוך בארץ הקדושה לשלוש הדתות -היהדות הנצרות והאסלאם- ופיוס בין היהודים והערבים.",
+  "אנו מציעים קבלה והסכמה הדדית מידית לפתרון והקמת שתי מדינות -ישראל ופלסטין- זו לצד זו, בשלום, בביטחון, בשותפות ובסובלנות.",
+  "ועידת שלום בינלאומית דחופה: הכינוס יכלול את כל הצדדים והתומכים הרלוונטיים להסדר מדיני כולל, מטרת הכינוס היא להשיק מסלול חדש להסדר מדיני כולל, וקריאה להפסקת המלחמה וכל צורות האלימות ההדדית, והשלמה ופיתוח פרטי יוזמת גשרי פיוס ושלום.",
+  "הכרזה הדדית על הפסקת אש קבועה וכוללת עד להשגת הסכם הסדר קבע וסופי: ההכרזה על הפסקת האש כוללת את הסכמת שני הצדדים, הישראלי והפלסטיני, להפסקת אש ומלחמה מקיפה, מלאה וקבועה, לרבות הפסקת כל פעולות האיבה והאלימות הלאומית ההדדית, והסתה לאלימות באופן מוחלט וקבוע."
+] : [
+  "The vision of the Bridges of Reconciliation and Peace Initiative is to achieve a comprehensive and sustainable peace, ending the conflict in the Holy Land for the three religions—Judaism, Christianity, and Islam—and achieving reconciliation between Jews and Arabs, establishing a Palestinian state alongside the State of Israel, and achieving peace between the two states, in accordance with the two-state solution vision and within the framework of international legitimacy.",
+  "We propose immediate mutual acceptance of the principle of the two-state solution and the establishment of two states, Israel and Palestine, side by side, in peace, security, partnership, and tolerance.",
+  "Convening an Urgent International Peace Conference: The conference will bring together all relevant parties and supporters of a comprehensive political settlement, with the goal of launching a new path for a comprehensive political settlement, calling for a cessation of war and all forms of mutual violence, and completing and developing the details of the Bridges of Reconciliation and Peace Initiative.",
+  "Bilateral Declaration of a Permanent and Comprehensive Ceasefire Until Final Settlement Agreement is Reached: The Ceasefire Declaration encompasses an agreement between the Israeli and Palestinian parties for a comprehensive, complete, and permanent cessation of hostilities and war, including an absolute and steadfast halt to all acts of hostility, mutual national violence, and incitement to violence."
+];
 
   return (
     <div className="min-h-screen bg-white py-12">
