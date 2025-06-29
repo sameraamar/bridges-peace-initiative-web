@@ -11,25 +11,25 @@ const Home: React.FC = () => {
 
   const videos = [
     { 
-      src: '/video1.mp4', 
+      youtubeId: '0LS3l1dgqqc',
       title: language === 'ar' ? 'النائب منصور عباس يسلّم رئيس الحكومة وثيقة المبادرة' :
              language === 'he' ? 'ח״כ מנסור עבאס העביר לרה"מ נתניהו את מסמך היוזמה' :
              'MK Mansour Abbas presents the initiative document to the Prime Minister'
     },
     { 
-      src: '/video2.mp4', 
+      youtubeId: 'kWzCP2IGftM',
       title: language === 'ar' ? 'مقابلة مع راديو الشمس حول المبادرة' :
              language === 'he' ? 'ריאיון עם רדיו אל-שמס על היוזמה' :
              'Interview with Radio Al-Shams about the initiative'
     },
     { 
-      src: '/video3.mp4', 
+      youtubeId: 'rz3iaiaLqXA',
       title: language === 'ar' ? 'مقابلة مع راديو مكان حول أهداف المبادرة' :
              language === 'he' ? 'ריאיון עם רדיו מכאן על מטרות היוזמה' :
              'Interview with Radio Makan about the initiative goals'
     },
     { 
-      src: '/video4.mp4', 
+      youtubeId: 'kRLPcFVE63U',
       title: language === 'ar' ? 'مقابلة مع راديو الناس حول الدولة الفلسطينية' :
              language === 'he' ? 'ריאיון עם רדיו אל-נאס על המדינה הפלסטינית' :
              'Interview with Radio Al-Nas about the Palestinian state'
@@ -81,12 +81,14 @@ const Home: React.FC = () => {
             {videos.map((video, index) => (
               <Card key={index} className="border-green-100 hover:border-green-200 transition-colors overflow-hidden">
                 <div className="aspect-video">
-                  <video controls className="w-full h-full object-cover">
-                    <source src={video.src} type="video/mp4" />
-                    {language === 'ar' ? 'متصفحك لا يدعم تشغيل الفيديو' :
-                     language === 'he' ? 'הדפדפן שלך אינו תומך בהפעלת וידאו' :
-                     'Your browser does not support the video tag'}
-                  </video>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                    title={video.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
                 </div>
                 <CardHeader>
                   <CardTitle className="text-green-900 text-lg">{video.title}</CardTitle>

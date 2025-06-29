@@ -133,16 +133,16 @@ const Contact: React.FC = () => {
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-green-600 mr-2" />
                     <a 
-                      href="tel:+972505333867"
+                      href="tel:+972532407896"
                       className="text-green-600 hover:text-green-700 transition-colors"
                     >
-                      +972-(0)50-5333867
+                      +972-(0)53-2407896
                     </a>
                   </div>
                   <div className="flex items-center">
                     <MessageCircle className="h-5 w-5 text-green-600 mr-2" />
                     <a 
-                      href="https://wa.me/972505333867"
+                      href="https://wa.me/972532407896"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-green-600 hover:text-green-700 transition-colors"
