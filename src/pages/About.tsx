@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { User, Target, Heart } from 'lucide-react';
+import { User, Target, Network } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
@@ -34,7 +34,7 @@ const About: React.FC = () => {
     {
       id: 'introduction',
       title: language === 'ar' ? 'مقدمة' : language === 'he' ? 'דברי פתיחה' : 'Introduction',
-      icon: Heart,
+      icon: Network,
       content: language === 'ar' ? 
         `مبادرة جسور التّصالح والسّلام
 

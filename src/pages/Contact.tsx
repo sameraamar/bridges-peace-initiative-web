@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Facebook, Instagram, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Facebook, Instagram, MessageCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const { t, language } = useLanguage();
@@ -100,6 +100,7 @@ const Contact: React.FC = () => {
                         <a 
                           href={info.href}
                           className="text-green-600 hover:text-green-700 transition-colors text-sm"
+                          style={{ direction: 'ltr', unicodeBidi: 'plaintext' }}
                         >
                           {info.value}
                         </a>
@@ -129,12 +130,13 @@ const Contact: React.FC = () => {
                    language === 'he' ? 'עבדאלכרים עזאם' :
                    'Abdolkarim Azzam'}
                 </h3>
-                <div className="space-y-2" >
+                <div className="space-y-2">
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-green-600 mr-2" />
                     <a 
                       href="tel:+972532407896"
                       className="text-green-600 hover:text-green-700 transition-colors"
+                      style={{ direction: 'ltr', unicodeBidi: 'plaintext' }}
                     >
                       +972-(0)53-2407896
                     </a>
@@ -190,75 +192,17 @@ const Contact: React.FC = () => {
           </Card>
         </div>
 
-        {/* Additional Information */}
+        {/* Note */}
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Office Location */}
-            <Card className="border-green-100">
-              <CardHeader>
-                <CardTitle className="text-xl text-green-900">
-                  {language === 'ar' ? 'موقع المكتب' :
-                   language === 'he' ? 'מיקום המשרד' :
-                   'Office Location'}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-start p-4 bg-green-50 rounded-lg">
-                  <MapPin className="h-6 w-6 text-green-600 mr-4 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">
-                      {language === 'ar' ? 'الكنيست الإسرائيلي' :
-                       language === 'he' ? 'הכנסת' :
-                       'The Knesset'}
-                    </h3>
-                    <p className="text-gray-600">
-                      {language === 'ar' ? 'القدس، إسرائيل' :
-                       language === 'he' ? 'ירושלים, ישראל' :
-                       'Jerusalem, Israel'}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Office Hours */}
-            <Card className="border-green-100">
-              <CardHeader>
-                <CardTitle className="text-xl text-green-900">
-                  {language === 'ar' ? 'ساعات العمل' :
-                   language === 'he' ? 'שעות פעילות' :
-                   'Office Hours'}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2 text-gray-700">
-                  <div className="flex justify-between">
-                    <span>{language === 'ar' ? 'الأحد - الخميس' : language === 'he' ? 'ראשון - חמישי' : 'Sunday - Thursday'}</span>
-                    <span>9:00 - 17:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>{language === 'ar' ? 'الجمعة' : language === 'he' ? 'שישי' : 'Friday'}</span>
-                    <span>9:00 - 13:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>{language === 'ar' ? 'السبت' : language === 'he' ? 'שבת' : 'Saturday'}</span>
-                    <span className="text-red-600">{language === 'ar' ? 'مغلق' : language === 'he' ? 'סגור' : 'Closed'}</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Note */}
-            <Card className="border-green-100 bg-green-50">
-              <CardContent className="p-6">
-                <p className="text-green-800 text-sm leading-relaxed">
-                  {language === 'ar' ? 'نحن نقدر تواصلكم معنا ونسعى للرد على جميع الرسائل في أقرب وقت ممكن. لطلبات عاجلة، يرجى الاتصال مباشرة.' :
-                   language === 'he' ? 'אנו מעריכים את פנייתכם אלינו ומשתדלים להשיב על כל ההודעות בהקדם האפשרי. לבקשות דחופות, אנא צרו קשר ישירות.' :
-                   'We appreciate your contact and strive to respond to all messages as soon as possible. For urgent requests, please contact directly.'}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+          <Card className="border-green-100 bg-green-50">
+            <CardContent className="p-6">
+              <p className="text-green-800 text-sm leading-relaxed">
+                {language === 'ar' ? 'نحن نقدر تواصلكم معنا ونسعى للرد على جميع الرسائل في أقرب وقت ممكن. لطلبات عاجلة، يرجى الاتصال مباشرة.' :
+                 language === 'he' ? 'אנו מעריכים את פנייתכם אלינו ומשתדלים להשיב על כל ההודעות בהקדם האפשרי. לבקשות דחופות, אנא צרו קשר ישירות.' :
+                 'We appreciate your contact and strive to respond to all messages as soon as possible. For urgent requests, please contact directly.'}
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
