@@ -72,11 +72,6 @@ const Home: React.FC = () => {
       {/* Video Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            {language === 'ar' ? 'فيديوهات المبادرة' :
-             language === 'he' ? 'סרטוני היוזמה' :
-             'Initiative Videos'}
-          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {videos.map((video, index) => (
               <Card key={index} className="border-green-100 hover:border-green-200 transition-colors overflow-hidden">
@@ -90,9 +85,6 @@ const Home: React.FC = () => {
                     className="w-full h-full"
                   ></iframe>
                 </div>
-                <CardHeader>
-                  <CardTitle className="text-green-900 text-lg">{video.title}</CardTitle>
-                </CardHeader>
               </Card>
             ))}
           </div>

@@ -105,7 +105,26 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('ar');
+  const getInitialLanguage = (): Language => {
+    // First check localStorage
+    const stored = localStorage.getItem('language') as Language;
+    if (stored && ['ar', 'he', 'en'].includes(stored)) {
+      return stored;
+    }
+    
+    // Then check browser language
+    const browserLang = navigator.language.toLowerCase().split('-')[0];
+    if (browserLang === 'ar') return 'ar';
+    if (browserLang === 'he') return 'he';
+    return 'en';
+  };
+
+  const [language, setLanguage] = useState<Language>(getInitialLanguage());
+
+  // Save language preference whenever it changes
+  React.useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations['ar']] || key;

@@ -10,20 +10,25 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       title: t('email'),
-      value: 'mabas@knesset.gov.il / mnsorabbas@gmail.com',
-      href: 'mailto:mabas@knesset.gov.il'
+      values: [
+        { value: 'mabas@knesset.gov.il', href: 'mailto:mabas@knesset.gov.il' },
+        { value: 'mnsorabbas@gmail.com', href: 'mailto:mnsorabbas@gmail.com' }
+      ]
     },
     {
       icon: Phone,
-      title: t('phone'),
-      value: '+972-(0)2-6408161 / +972-(0)2-6408686',
-      href: 'tel:+972-2-6408161'
+      title: language === 'ar' ? 'الهاتف' : t('phone'),
+      values: [
+        { value: '+972-(0)2-6408161', href: 'tel:+972-2-6408161' },
+        { value: '+972-(0)2-6408686', href: 'tel:+972-2-6408686' }
+      ]
     },
     {
       icon: Phone,
       title: language === 'ar' ? 'فاكس' : language === 'he' ? 'פקס' : 'Fax',
-      value: '+972-(0)2-6408203',
-      href: 'tel:+972-2-6408203'
+      values: [
+        { value: '+972-(0)2-6408203', href: 'tel:+972-2-6408203' }
+      ]
     }
   ];
 
@@ -74,9 +79,9 @@ const Contact: React.FC = () => {
         {/* Main Contact Information */}
         <div className="mb-12">
           <Card className="border-green-100">
-            <CardHeader className="text-center">
-              <div className="mb-4">
-                <CardTitle className="text-3xl text-green-900 mb-2">
+            
+              <div className="mb-4 text-center" style={{ direction: language === 'ar' || language === 'he' ? 'rtl' : 'ltr' }}>
+                <CardTitle className="text-3xl text-green-900 mb-2" style={{ textAlign: 'center' }}>
                   {language === 'ar' ? 'النائب د. منصور عباس' :
                    language === 'he' ? 'ח"כ ד"ר מנסור עבאס' :
                    'MK Mansour Abbas'}
@@ -87,24 +92,34 @@ const Contact: React.FC = () => {
                    'Head of the Ra\'am'}
                 </CardDescription>
               </div>
-            </CardHeader>
+     
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="space-y-2 bg-green-50" style={{ direction: language === 'ar' || language === 'he' ? 'rtl' : 'ltr' }}>
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
                   return (
-                    <div key={index} className="flex items-start p-4 bg-green-50 rounded-lg">
-                      <IconComponent className="h-6 w-6 text-green-600 mr-4 mt-1" />
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
-                        <a 
-                          href={info.href}
-                          className="text-green-600 hover:text-green-700 transition-colors text-sm"
-                          style={{ direction: 'ltr', unicodeBidi: 'plaintext' }}
-                        >
-                          {info.value}
-                        </a>
+                    <div key={index}>
+                      <div className="flex items-start p-2" style={{ justifyContent: language === 'ar' || language === 'he' ? 'flex-end' : 'flex-start' }}>
+                        <IconComponent className={`h-6 w-6 text-green-600 mt-1 ${language === 'ar' || language === 'he' ? 'ml-4' : 'mr-4'}`} />
+                        <div style={{ textAlign: language === 'ar' || language === 'he' ? 'right' : 'left' }}>
+                          <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
+                          <div className="space-y-1">
+                            {info.values.map((item, valueIndex) => (
+                              <a 
+                                key={valueIndex}
+                                href={item.href}
+                                className="text-green-600 hover:text-green-700 transition-colors text-sm block"
+                                style={{ direction: 'ltr', unicodeBidi: 'plaintext' }}
+                              >
+                                {item.value}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
                       </div>
+                      {index < contactInfo.length - 1 && (
+                        <div className="border-b border-green-100 my-1" />
+                      )}
                     </div>
                   );
                 })}
@@ -114,44 +129,46 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Parliamentary Assistant */}
-        <div className="mb-12">
+        <div >
           <Card className="border-green-100">
-            <CardHeader>
-              <CardTitle className="text-2xl text-green-900">
+            
+              <CardTitle className="text-2xl text-green-900 text-center">
+                {language === 'ar' ? 'عبد الكريم عزام' :
+                   language === 'he' ? 'עבדאלכרים עזאם' :
+                 'Abdolkarim Azzam'}
+              </CardTitle>
+            <CardDescription className="mb-4 text-center" style={{ direction: language === 'ar' || language === 'he' ? 'rtl' : 'ltr' }}>
                 {language === 'ar' ? 'المستشار البرلماني' :
                  language === 'he' ? 'היועץ הפרלמנטרי' :
-                 'Parliamentary Assistant'}
-              </CardTitle>
-            </CardHeader>
+                   'Parliamentary Assistant'}
+            </CardDescription>
             <CardContent>
-              <div className="p-4 bg-green-50 rounded-lg">
-                <h3 className="font-semibold text-gray-900 text-lg mb-3">
-                  {language === 'ar' ? 'عبد الكريم عزام' :
-                   language === 'he' ? 'עבדאלכרים עזאם' :
-                   'Abdolkarim Azzam'}
-                </h3>
+              <div className="p-4 bg-green-50 rounded-lg" style={{ direction: language === 'ar' || language === 'he' ? 'rtl' : 'ltr' }}>
+
                 <div className="space-y-2">
-                  <div className="flex items-center">
-                    <Phone className="h-5 w-5 text-green-600 mr-2" />
+                  <div >
+                    <div >
+                      <span className="text-sm font-medium">
+                        {t('phone')}
+                      </span>
+                      <Phone className={`h-5 w-5 text-green-600 ${language === 'ar' || language === 'he' ? 'ml-2' : 'mr-2'}`} />
+                    </div>
                     <a 
                       href="tel:+972532407896"
-                      className="text-green-600 hover:text-green-700 transition-colors"
+                      className="text-green-600 hover:text-green-700 transition-colors mt-1"
                       style={{ direction: 'ltr', unicodeBidi: 'plaintext' }}
                     >
                       +972-(0)53-2407896
                     </a>
-                  </div>
-                  <div className="flex items-center">
-                    <MessageCircle className="h-5 w-5 text-green-600 mr-2" />
                     <a 
                       href="https://wa.me/972532407896"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-green-600 hover:text-green-700 transition-colors"
+                      style={{ textAlign: language === 'ar' || language === 'he' ? 'right' : 'left' }}
                     >
-                      {language === 'ar' ? 'واتساب' :
-                       language === 'he' ? 'WhatsApp' :
-                       'WhatsApp'}
+                    <MessageCircle className={`h-5 w-5 text-green-600 ${language === 'ar' || language === 'he' ? 'ml-2' : 'mr-2'}`} />
+
                     </a>
                   </div>
                 </div>
@@ -163,15 +180,16 @@ const Contact: React.FC = () => {
         {/* Social Media Links */}
         <div className="mb-12">
           <Card className="border-green-100">
-            <CardHeader>
+            {/* make the following text centered */}
+
               <CardTitle className="text-2xl text-green-900 text-center">
                 {language === 'ar' ? 'تابعونا على وسائل التواصل الاجتماعي' :
                  language === 'he' ? 'עקבו אחרינו ברשתות החברתיות' :
                  'Follow Us on Social Media'}
               </CardTitle>
-            </CardHeader>
+
             <CardContent>
-              <div className="flex justify-center space-x-8">
+              <div className={`flex justify-center ${language === 'ar' || language === 'he' ? 'space-x-reverse' : 'space-x-8'}`}>
                 {socialLinks.map((link, index) => {
                   const IconComponent = link.icon;
                   return (
@@ -196,7 +214,7 @@ const Contact: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <Card className="border-green-100 bg-green-50">
             <CardContent className="p-6">
-              <p className="text-green-800 text-sm leading-relaxed">
+              <p className="text-green-800 text-sm leading-relaxed" style={{ direction: language === 'ar' || language === 'he' ? 'rtl' : 'ltr', textAlign: language === 'ar' || language === 'he' ? 'right' : 'left' }}>
                 {language === 'ar' ? 'نحن نقدر تواصلكم معنا ونسعى للرد على جميع الرسائل في أقرب وقت ممكن. لطلبات عاجلة، يرجى الاتصال مباشرة.' :
                  language === 'he' ? 'אנו מעריכים את פנייתכם אלינו ומשתדלים להשיב על כל ההודעות בהקדם האפשרי. לבקשות דחופות, אנא צרו קשר ישירות.' :
                  'We appreciate your contact and strive to respond to all messages as soon as possible. For urgent requests, please contact directly.'}

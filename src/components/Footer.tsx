@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-50 border-t border-green-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className={`text-center ${isRTL ? 'text-right' : 'text-left'}`}>
+        <div className={`text-center `}>
           <div className="mb-4">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
               {t('siteTitle')}

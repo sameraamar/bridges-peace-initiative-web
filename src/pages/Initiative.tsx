@@ -17,118 +17,113 @@ const Initiative: React.FC = () => {
     document.body.removeChild(link);
   };
 
-  const initiativePoints = language === 'ar' ? [
-    "إن رؤيتنا في مبادرة جسور التصالح والسّلام هي الوصول إلى سلام شامل ومستدام إنهاء الصراع في الأرض المقدّسة للديانات الثلاث اليهودية المسيحية، والإسلام تحقيق المصالحة بين اليهود والعرب، إقامة الدولة الفلسطينية لجانب دولة إسرائيل، وتحقيق السلام بين الدولتين، وفق رؤية حل الدولتين وفي إطار الشرعية الدولية.",
-    "نقترح القبول الفوري المتبادل بمبدأ حل وإقامة الدولتين إسرائيل وفلسطين جنبا إلى جنب، في سلام وأمن وشراكة وتسامح.",
-    "عقد مؤتمر سلام دولي عاجل: المؤتمر سيجمع كافة الأطراف والداعمين ذوي الصلة بالتسوية السياسية الشاملة، هدف المؤتمر إطلاق مسار جديد لتسوية سياسية شاملة، والدعوة لوقف الحرب وكل أشكال العنف المتبادل، واستكمال وتطوير تفاصيل مبادرة جسور التصالح والسلام.",
-    "الإعلان المتبادل عن هدنة دائمة وشاملة حتّى تحقيق اتفاق التسوية الدائم والنهائي: يتضمن الإعلان عن الهدنة موافقة الطرفين الإسرائيلي والفلسطيني على وقف شامل وكامل ودائم لإطلاق النار والحرب، بما يشمل وقف جميع الأعمال العدائية والعنف القومي المتبادل، والتحريض على العنف بشكل مطلق وثابت."
-  ] : language === 'he' ? [
-    "החזון שעומד בבסיס יוזמת גשרים של פיוס ושלום הינו שלום כולל ובר קיימא, סיום הסכסוך בארץ הקדושה לשלוש הדתות -היהדות הנצרות והאסלאם- ופיוס בין היהודים והערבים.",
-    "אנו מציעים קבלה והסכמה הדדית מידית לפתרון והקמת שתי מדינות -ישראל ופלסטין- זו לצד זו, בשלום, בביטחון, בשותפות ובסובלנות.",
-    "ועידת שלום בינלאומית דחופה: הכינוס יכלול את כל הצדדים והתומכים הרלוונטיים להסדר מדיני כולל, מטרת הכינוס היא להשיק מסלול חדש להסדר מדיני כולל, וקריאה להפסקת המלחמה וכל צורות האלימות ההדדית, והשלמה ופיתוח פרטי יוזמת גשרי פיוס ושלום.",
-    "הכרזה הדדית על הפסקת אש קבועה וכוללת עד להשגת הסכם הסדר קבע וסופי: ההכרזה על הפסקת האש כוללת את הסכמת שני הצדדים, הישראלי והפלסטיני, להפסקת אש ומלחמה מקיפה, מלאה וקבועה, לרבות הפסקת כל פעולות האיבה והאלימות הלאומית ההדדית, והסתה לאלימות באופן מוחלט וקבוע."
-  ] : [
-    "The vision of the Bridges of Reconciliation and Peace Initiative is to achieve a comprehensive and sustainable peace, ending the conflict in the Holy Land for the three religions—Judaism, Christianity, and Islam—and achieving reconciliation between Jews and Arabs, establishing a Palestinian state alongside the State of Israel, and achieving peace between the two states, in accordance with the two-state solution vision and within the framework of international legitimacy.",
-    "We propose immediate mutual acceptance of the principle of the two-state solution and the establishment of two states, Israel and Palestine, side by side, in peace, security, partnership, and tolerance.",
-    "Convening an Urgent International Peace Conference: The conference will bring together all relevant parties and supporters of a comprehensive political settlement, with the goal of launching a new path for a comprehensive political settlement, calling for a cessation of war and all forms of mutual violence, and completing and developing the details of the Bridges of Reconciliation and Peace Initiative.",
-    "Bilateral Declaration of a Permanent and Comprehensive Ceasefire Until Final Settlement Agreement is Reached: The Ceasefire Declaration encompasses an agreement between the Israeli and Palestinian parties for a comprehensive, complete, and permanent cessation of hostilities and war, including an absolute and steadfast halt to all acts of hostility, mutual national violence, and incitement to violence."
-  ];
+
 
   return (
     <div className="min-h-screen bg-white py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className={`text-center mb-12 ${language === 'ar' || language === 'he' ? 'rtl' : 'ltr'}`}>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4 mx-auto max-w-2xl">
             {language === 'ar' ? 'المبادرة' :
              language === 'he' ? 'היוזמה' :
              'The Initiative'}
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 mx-auto max-w-2xl">
             {language === 'ar' ? 'الخطوط العريضة لمبادرة جسور التصالح والسلام' :
-             language === 'he' ? 'הקווים המנחים של יוזמת גشרים של פיוס ושלום' :
+             language === 'he' ? 'הקווים המנחים של יוזמת גשרים של פיוס ושלום' :
              'Guidelines for the Bridges of Reconciliation and Peace Initiative'}
           </p>
         </div>
 
         {/* Main Initiative Card */}
         <Card className="mb-8 border-green-100">
-          <CardHeader className="text-center">
-            <FileText className="h-16 w-16 text-green-600 mx-auto mb-4" />
-            <CardTitle className="text-2xl text-green-900">
-              {language === 'ar' ? 'النص الكامل للمبادرة' :
-               language === 'he' ? 'הטקסט המלא של היוזמה' :
-               'Full Text of the Initiative'}
-            </CardTitle>
-            <CardDescription>
-              {language === 'ar' ? 'المبادرة متوفرة بالثلاث لغات: العربية، العبرية، والإنجليزية' :
-               language === 'he' ? 'היוזמה זמינה בשלוש שפות: ערבית, עברית ואנגלית' :
-               'The initiative is available in three languages: Arabic, Hebrew, and English'}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center">
-            <Button 
-              onClick={handleDownloadPDF}
-              className="bg-green-600 hover:bg-green-700"
-              size="lg"
-            >
-              <Download className="mr-2 h-5 w-5" />
-              {language === 'ar' ? 'تحميل ملف PDF' :
-               language === 'he' ? 'הורד קובץ PDF' :
-               'Download PDF'}
-            </Button>
-            <p className="text-sm text-gray-600 mt-4">
-              {language === 'ar' ? 'اضغط هنا لتحميل النص الكامل للمبادرة بجميع اللغات' :
-               language === 'he' ? 'לחץ כאן להורדת הטקסט המלא של היוזמה בכל השפות' :
-               'Click here to download the full text of the initiative in all languages'}
-            </p>
-          </CardContent>
+          <div className="flex flex-col items-center justify-center py-12 px-4">
+            {/* Content Container with RTL/LTR Support */}
+            <div className={`${language === 'ar' || language === 'he' ? 'rtl' : 'ltr'}`}>
+              {/* Icon and Title Section */}
+              <div className="text-center mb-8 w-full">
+                <FileText className="h-24 w-24 text-green-600 mx-auto mb-6" />
+                <h2 className="text-3xl md:text-4xl font-bold text-green-900">
+                  {language === 'ar' ? 'النص الكامل للمبادرة' :
+                   language === 'he' ? 'הטקסט המלא של היוזמה' :
+                   'Full Text of the Initiative'}
+                </h2>
+              </div>
+
+              {/* Languages Text */}
+              <div className="mb-8 text-lg text-gray-600" style={{ width: '100%', textAlign: 'center', direction: language === 'ar' || language === 'he' ? 'rtl' : 'ltr' }}>
+                {language === 'ar' && (
+                  <div>
+                    <div>المبادرة متوفرة بالثلاث لغات:</div>
+                    <div>العربية، العبرية، والإنجليزية</div>
+                  </div>
+                )}
+                {language === 'he' && (
+                  <div>
+                    <div>היוזמה זמינה בשלוש שפות:</div>
+                    <div>ערבית, עברית ואנגלית</div>
+                  </div>
+                )}
+                {language === 'en' && (
+                  'The initiative is available in three languages: Arabic, Hebrew, and English'
+                )}
+              </div>
+
+              {/* Download Button */}
+              <div className="mb-6" style={{ width: '100%', textAlign: 'center' }}>
+                <Button 
+                  onClick={handleDownloadPDF}
+                  className="bg-green-600 hover:bg-green-700"
+                  size="lg"
+                >
+                  <Download className={`h-5 w-5 ${language === 'ar' || language === 'he' ? 'ml-2' : 'mr-2'}`} />
+                  {language === 'ar' ? 'تحميل ملف PDF' :
+                   language === 'he' ? 'הורד קובץ PDF' :
+                   'Download PDF'}
+                </Button>
+              </div>
+
+              {/* Small Text */}
+              <div style={{ width: '100%', textAlign: 'center', direction: language === 'ar' || language === 'he' ? 'rtl' : 'ltr' }}>
+                <div className="text-sm text-gray-500">
+                  {language === 'ar' && (
+                    <div>
+                      <div>اضغط هنا</div>
+                      <div>لتحميل النص الكامل للمبادرة بجميع اللغات</div>
+                    </div>
+                  )}
+                  {language === 'he' && (
+                    <div>
+                      <div>לחץ כאן</div>
+                      <div>להורדת הטקסט המלא של היוזמה בכל השפות</div>
+                    </div>
+                  )}
+                  {language === 'en' && (
+                    'Click here to download the full text of the initiative in all languages'
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
         </Card>
 
-        {/* Initiative Points */}
-        <Card className="border-green-100">
-          <CardHeader>
-            <CardTitle className="text-2xl text-green-900">
-              {language === 'ar' ? 'أبرز نقاط المبادرة' :
-               language === 'he' ? 'עיקרי היוזמה' :
-               'Key Points of the Initiative'}
-            </CardTitle>
-            <CardDescription>
-              {language === 'ar' ? 'المحاور الأساسية التي تقوم عليها مبادرة جسور التصالح والسلام' :
-               language === 'he' ? 'העקרונות הבסיסיים של יוזמת גשרים של פיוס ושלום' :
-               'The fundamental principles of the Bridges of Reconciliation and Peace Initiative'}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {initiativePoints.map((point, index) => (
-                <div 
-                  key={index}
-                  className="flex items-start p-4 bg-green-50 rounded-lg border border-green-100"
-                >
-                  <div className="flex-shrink-0 w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
-                    {index + 1}
-                  </div>
-                  <p className="text-gray-700 leading-relaxed">{point}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
 
         {/* Additional Information */}
         <div className="mt-8">
           <Card className="border-green-100 bg-green-50">
             <CardContent className="p-8 text-center">
-              <h3 className="text-xl font-semibold text-green-900 mb-4">
-                {language === 'ar' ? 'للمزيد من المعلومات' :
-                 language === 'he' ? 'למידע נוסף' :
-                 'For More Information'}
-              </h3>
-              <p className="text-gray-700 mb-6">
-                {language === 'ar' ? 'تحتوي الوثيقة الكاملة على تفاصيل شاملة حول المبادرة، بما في ذلك الخطة التنفيذية والآليات المقترحة لتحقيق السلام والمصالحة.' :
-                 language === 'he' ? 'המסמך המלא מכיל פרטים מקיפים על היוזמה, כולל התוכנית הביצועית והמנגנונים המוצעים להשגת שלום ופיוס.' :
-                 'The complete document contains comprehensive details about the initiative, including the implementation plan and proposed mechanisms for achieving peace and reconciliation.'}
-              </p>
+              <div className={`${language === 'ar' || language === 'he' ? 'rtl' : 'ltr'}`}>
+                <h3 className="text-xl font-semibold text-green-900 mb-4 mx-auto max-w-2xl">
+                  {language === 'ar' ? 'للمزيد من المعلومات' :
+                   language === 'he' ? 'למידע נוסף' :
+                   'For More Information'}
+                </h3>
+                <p className="text-gray-700 mb-6 mx-auto max-w-2xl">
+                  {language === 'ar' ? 'تحتوي الوثيقة الكاملة على تفاصيل شاملة حول المبادرة، بما في ذلك الخطة التنفيذية والآليات المقترحة لتحقيق السلام والمصالحة.' :
+                   language === 'he' ? 'המסמך המלא מכיל פרטים מקיפים על היוזמה, כולל התוכנית הביצועית והמנגנונים המוצעים להשגת שלום ופיוס.' :
+                   'The complete document contains comprehensive details about the initiative, including the implementation plan and proposed mechanisms for achieving peace and reconciliation.'}
+                </p>
+              </div>
               <div className="flex justify-center gap-4">
                 <Button 
                   onClick={handleDownloadPDF}
