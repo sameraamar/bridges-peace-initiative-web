@@ -62,7 +62,19 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/90fb1c57-979c-42db-9d5d-da121cfafec5) and click on Share -> Publish.
+### GitHub Pages
+
+Push to the `main` branch to run the GitHub Pages deployment workflow. The site is built with the repository name as its base path and deployed to:
+
+https://sameraamar.github.io/bridges-peace-initiative-web/
+
+In the repository settings, select **GitHub Actions** under **Pages > Build and deployment > Source** if it is not already selected.
+
+The GitHub Pages deployment is independent of Lovable. The default local and Lovable build continues to use `/` as its base path.
+
+### Lovable
+
+Open [Lovable](https://lovable.dev/projects/90fb1c57-979c-42db-9d5d-da121cfafec5) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
 

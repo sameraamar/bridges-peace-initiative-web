@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { FileText, Download } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Initiative: React.FC = () => {
   const { t, language } = useLanguage();
@@ -10,7 +11,7 @@ const Initiative: React.FC = () => {
   const handleDownloadPDF = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/initiative-full-text.pdf';
+    link.href = `${import.meta.env.BASE_URL}initiative-full-text.pdf`;
     link.download = 'initiative-full-text.pdf';
     document.body.appendChild(link);
     link.click();
@@ -135,11 +136,11 @@ const Initiative: React.FC = () => {
                    'Download Initiative'}
                 </Button>
                 <Button variant="outline" asChild className="border-green-600 text-green-600 hover:bg-green-50">
-                  <a href="/contact">
+                  <Link to="/contact">
                     {language === 'ar' ? 'تواصل معنا' :
                      language === 'he' ? 'צור קשר' :
                      'Contact Us'}
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </CardContent>

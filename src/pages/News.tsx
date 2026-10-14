@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Calendar, User, Tag, Play, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const News: React.FC = () => {
   const { t, language } = useLanguage();
@@ -49,7 +50,7 @@ const News: React.FC = () => {
              language === 'he' ? 'רע"מ מציגה בפני המפלגות וראשי הרשויות הערביות את יוזמת גשרים לפיוס ושלום' :
              'Ra\'am Presents the Bridges of Reconciliation and Peace Initiative to Arab Parties and Local Arab Leadership in Israel',
       date: '2025-03-11',
-      imageUrl: '/jusorImage.png',
+      imageUrl: `${import.meta.env.BASE_URL}jusorImage.png`,
       category: language === 'ar' ? 'اجتماع' : language === 'he' ? 'פגישה' : 'Meeting',
       author: language === 'ar' ? 'القائمة العربية الموحدة' : language === 'he' ? 'רע"מ' : 'Ra\'am',
       excerpt: language === 'ar' ?
@@ -283,14 +284,14 @@ const News: React.FC = () => {
                  language === 'he' ? 'הישארו מעודכנים בחדשות ופעילויות היוזמה האחרונות' :
                  'Stay updated with the latest news and activities of the initiative'}
               </p>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors"
               >
                 {language === 'ar' ? 'تواصل معنا' :
                  language === 'he' ? 'צור קשר' :
                  'Contact Us'}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
