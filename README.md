@@ -64,13 +64,15 @@ This project is built with:
 
 ### GitHub Pages
 
-Push to the `main` branch to run the GitHub Pages deployment workflow. The site is built with the repository name as its base path and deployed to:
+Push to the `github-pages` branch to run the GitHub Pages deployment workflow. The site is built with the repository name as its base path and deployed to:
 
 https://sameraamar.github.io/bridges-peace-initiative-web/
 
 In the repository settings, select **GitHub Actions** under **Pages > Build and deployment > Source** if it is not already selected.
 
-The GitHub Pages deployment is independent of Lovable. The default local and Lovable build continues to use `/` as its base path.
+If the `github-pages` environment restricts deployment branches, allow the `github-pages` branch under **Settings > Environments > github-pages**.
+
+The GitHub Pages deployment is independent of Lovable, which remains connected to `main`. Keep migration changes on `github-pages` until they are ready to merge. The default local and Lovable build continues to use `/` as its base path.
 
 ### Lovable
 
