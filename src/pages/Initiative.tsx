@@ -8,18 +8,6 @@ import { Link } from 'react-router-dom';
 const Initiative: React.FC = () => {
   const { t, language } = useLanguage();
 
-  const handleDownloadPDF = () => {
-    // Create a link element and trigger download
-    const link = document.createElement('a');
-    link.href = `${import.meta.env.BASE_URL}initiative-full-text.pdf`;
-    link.download = 'initiative-full-text.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-
-
   return (
     <div className="min-h-screen bg-white py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,14 +61,16 @@ const Initiative: React.FC = () => {
               {/* Download Button */}
               <div className="mb-6" style={{ width: '100%', textAlign: 'center' }}>
                 <Button 
-                  onClick={handleDownloadPDF}
+                  asChild
                   className="bg-green-600 hover:bg-green-700"
                   size="lg"
                 >
+                  <a href={`${import.meta.env.BASE_URL}initiative-full-text.pdf`} download="initiative-full-text.pdf">
                   <Download className={`h-5 w-5 ${language === 'ar' || language === 'he' ? 'ml-2' : 'mr-2'}`} />
                   {language === 'ar' ? 'تحميل ملف PDF' :
                    language === 'he' ? 'הורד קובץ PDF' :
                    'Download PDF'}
+                  </a>
                 </Button>
               </div>
 
@@ -127,13 +117,15 @@ const Initiative: React.FC = () => {
               </div>
               <div className="flex justify-center gap-4">
                 <Button 
-                  onClick={handleDownloadPDF}
+                  asChild
                   className="bg-green-600 hover:bg-green-700"
                 >
+                  <a href={`${import.meta.env.BASE_URL}initiative-full-text.pdf`} download="initiative-full-text.pdf">
                   <Download className="mr-2 h-4 w-4" />
                   {language === 'ar' ? 'تحميل المبادرة' :
                    language === 'he' ? 'הורד את היוזמה' :
                    'Download Initiative'}
+                  </a>
                 </Button>
                 <Button variant="outline" asChild className="border-green-600 text-green-600 hover:bg-green-50">
                   <Link to="/contact">

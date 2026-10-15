@@ -36,10 +36,16 @@ jobs:
         run: npm ci
 
       - name: Build for GitHub Pages
-        run: npm run build -- --base="/${{ github.event.repository.name }}/"
+        run: npm run build:pages
+        env:
+          PAGES_BASE_PATH: /${{ github.event.repository.name }}/
+          VITE_SITE_URL: https://jusor-initiative.org
+          VITE_SITE_INDEXABLE: 'false'
 
-      - name: Add SPA fallback
-        run: cp dist/index.html dist/404.html
+      - name: Verify static pages and SEO
+        run: npm run test:pages
+        env:
+          PAGES_BASE_PATH: /${{ github.event.repository.name }}/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

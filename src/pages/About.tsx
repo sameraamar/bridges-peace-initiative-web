@@ -1,7 +1,6 @@
-import React, { useMemo, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { User, Target, Network } from 'lucide-react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { User, Target, Network, ChevronDown } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
 // Types for better type safety
@@ -211,11 +210,6 @@ In August 2021, The Marker ranked him the most influential Arab figure and the e
     contents: ''
   }), [language, t]);
 
-  // Update document title when language changes
-  useEffect(() => {
-    document.title = `${titleText.title} | Bridges Peace Initiative`;
-  }, [titleText.title]);
-
   return (
     <div className="min-h-screen bg-white py-12 scroll-smooth" role="main">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -229,9 +223,8 @@ In August 2021, The Marker ranked him the most influential Arab figure and the e
           {/* Main Content */}
           {sections.map((section) => (
             <div key={section.id} id={section.id} className="scroll-mt-24 mb-4">
-              <Accordion type="single" collapsible>
-                <AccordionItem value={section.id}>
-                  <AccordionTrigger className="hover:no-underline" aria-label={section.title}>
+              <details className="group border-b">
+                  <summary className="flex cursor-pointer list-none items-center justify-between py-4 [&::-webkit-details-marker]:hidden">
                     <div className={cn(
                       "flex items-center gap-4 w-full",
                       language === 'ar' || language === 'he' ? "flex-row-reverse justify-end" : "flex-row justify-start"
@@ -239,15 +232,15 @@ In August 2021, The Marker ranked him the most influential Arab figure and the e
                       <section.icon className="h-6 w-6 text-green-600" />
                       <h2 className="text-2xl font-semibold text-green-900">{section.title}</h2>
                     </div>
-                  </AccordionTrigger>
-                  <AccordionContent>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <div className="pb-4 pt-0 text-sm">
                     <SectionContent 
                       content={section.content}
                       isRTL={language === 'ar' || language === 'he'}
                     />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+                  </div>
+              </details>
             </div>
           ))}
         </div>

@@ -12,16 +12,18 @@ import Initiative from "./pages/Initiative";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import type { Language } from "./context/LanguageContext";
+import { Seo } from "./components/Seo";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+export const Site = ({ language }: { language: Language }) => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <LanguageProvider>
+      <LanguageProvider language={language}>
+        <Seo />
         <Toaster />
         <Sonner />
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -32,10 +34,20 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
-        </BrowserRouter>
       </LanguageProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
+
+const App = () => {
+  const base = import.meta.env.BASE_URL;
+  const segment = window.location.pathname.slice(base.length).split('/')[0];
+  const language: Language = segment === 'ar' || segment === 'he' ? segment : 'en';
+  return (
+    <BrowserRouter basename={`${base}${language === 'en' ? '' : `${language}/`}`}>
+      <Site language={language} />
+    </BrowserRouter>
+  );
+};
 
 export default App;

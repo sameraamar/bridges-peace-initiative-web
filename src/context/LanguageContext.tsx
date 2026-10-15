@@ -1,11 +1,12 @@
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, ReactNode } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export type Language = 'ar' | 'he' | 'en';
 
 interface LanguageContextType {
   language: Language;
-  setLanguage: (lang: Language) => void;
+  languageUrl: (lang: Language) => string;
   t: (key: string) => string;
 }
 
@@ -104,34 +105,17 @@ const translations = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const getInitialLanguage = (): Language => {
-    // First check localStorage
-    const stored = localStorage.getItem('language') as Language;
-    if (stored && ['ar', 'he', 'en'].includes(stored)) {
-      return stored;
-    }
-    
-    // Then check browser language
-    const browserLang = navigator.language.toLowerCase().split('-')[0];
-    if (browserLang === 'ar') return 'ar';
-    if (browserLang === 'he') return 'he';
-    return 'en';
-  };
-
-  const [language, setLanguage] = useState<Language>(getInitialLanguage());
-
-  // Save language preference whenever it changes
-  React.useEffect(() => {
-    localStorage.setItem('language', language);
-  }, [language]);
+export const LanguageProvider: React.FC<{ children: ReactNode; language: Language }> = ({ children, language }) => {
+  const location = useLocation();
+  const languageUrl = (lang: Language) =>
+    `${import.meta.env.BASE_URL}${lang === 'en' ? '' : `${lang}/`}${location.pathname.replace(/^\/|\/$/g, '')}${location.pathname === '/' ? '' : '/'}${location.search}${location.hash}`;
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations['ar']] || key;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, languageUrl, t }}>
       {children}
     </LanguageContext.Provider>
   );

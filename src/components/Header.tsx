@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 const Header: React.FC = () => {
   const { t, language } = useLanguage();
   const location = useLocation();
+  const pathname = location.pathname.replace(/\/$/, '') || '/';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
@@ -44,7 +45,7 @@ const Header: React.FC = () => {
                 key={item.name}
                 to={item.href}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  location.pathname === item.href
+                  pathname === item.href
                     ? 'text-green-600 border-b-2 border-green-600'
                     : 'text-gray-700 hover:text-green-600'
                 }`}
@@ -79,7 +80,7 @@ const Header: React.FC = () => {
                   key={item.name}
                   to={item.href}
                   className={`px-3 py-2 text-sm font-medium transition-colors ${
-                    location.pathname === item.href
+                    pathname === item.href
                       ? 'text-green-600 bg-green-50'
                       : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
                   }`}

@@ -74,6 +74,20 @@ If the `github-pages` environment restricts deployment branches, allow the `gith
 
 The GitHub Pages deployment is independent of Lovable, which remains connected to `main`. Keep migration changes on `github-pages` until they are ready to merge. The default local and Lovable build continues to use `/` as its base path.
 
+#### Static pages and SEO
+
+`npm run build:pages` pre-renders five pages in English (existing URLs), Arabic (`/ar/`), and Hebrew (`/he/`). Language links navigate to the equivalent translated page; the URL, rather than browser settings or saved preferences, determines the language. About sections use native expandable details so their full text is present and accessible without JavaScript.
+
+The build emits per-page titles, descriptions, canonical/alternate language links, a sitemap, robots.txt, and a real 404 page. React hydrates the generated HTML for interactive navigation.
+
+Build settings:
+
+- `PAGES_BASE_PATH`: `/` locally, `/bridges-peace-initiative-web/` for the temporary Pages address.
+- `VITE_SITE_URL`: canonical production origin, default `https://jusor-initiative.org`.
+- `VITE_SITE_INDEXABLE`: defaults to `false` (noindex, follow) to avoid indexing the temporary copy.
+
+Before migrating the domain, set `PAGES_BASE_PATH` to `/` and `VITE_SITE_INDEXABLE` to `true`, configure the Pages custom domain and DNS, then verify HTTPS, all 15 static URLs, canonical links, and the sitemap. Do not submit the staging sitemap to search engines.
+
 ### Lovable
 
 Open [Lovable](https://lovable.dev/projects/90fb1c57-979c-42db-9d5d-da121cfafec5) and click on Share -> Publish.
